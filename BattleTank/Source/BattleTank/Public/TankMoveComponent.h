@@ -27,7 +27,7 @@ public:
 	void IntendTurnRight(float Throw);
 
 private:
-	// Called from the pathfinding logic by the AI controllers
+	// Called from the path finding logic by the AI controllers
 	virtual void RequestDirectMove(const FVector& MoveVelocity, bool bForceMaxSpeed) override;
 	UTankTrack* LeftTrack = nullptr;
 	UTankTrack* RightTrack = nullptr;
