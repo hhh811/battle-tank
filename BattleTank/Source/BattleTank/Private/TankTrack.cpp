@@ -18,7 +18,7 @@ void UTankTrack::OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UP
 {
 	DriveTrack();	// Only drive if track is on the ground
 	ApplySidewaysForce();
-	UE_LOG(LogTemp, Warning, TEXT("current throttle: %f"), CurrentThrottle);
+	// UE_LOG(LogTemp, Warning, TEXT("current throttle: %f"), CurrentThrottle);
 	// Recover current throttle
 	CurrentThrottle = 0;
 }
