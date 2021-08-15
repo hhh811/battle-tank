@@ -21,9 +21,14 @@ protected:
 	void FoundAimingComponent(UTankAimingComponent* AimCompRef);
 
 private:
+	virtual void SetPawn(APawn* InPawn) override;
+
 	virtual void BeginPlay() override;
 	
 	virtual void Tick(float DeltaTime) override;
+
+	UFUNCTION()
+	void OnPossesedTankDeath();
 
 	// start the tank moving the barrel so that a shot would hit there
 	// the cross hair intersects the world
