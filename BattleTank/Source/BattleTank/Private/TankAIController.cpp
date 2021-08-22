@@ -1,7 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-#include "TankAimingComponent.h"
 #include "TankAIController.h"
+#include "TankAimingComponent.h"
 #include "Tank.h"
 
 void ATankAIController::BeginPlay()

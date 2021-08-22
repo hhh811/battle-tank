@@ -1,8 +1,8 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "TankAimingComponent.h"
 #include "TankPlayerController.h"
+#include "TankAimingComponent.h"
 #include "Tank.h"
 #include "..\Public\TankPlayerController.h"
 
@@ -27,6 +27,7 @@ void ATankPlayerController::OnPossesedTankDeath()
 void ATankPlayerController::BeginPlay()
 {
 	Super::BeginPlay();
+	if (!GetPawn()) { return; }
 	auto AimingComponent = GetPawn()->FindComponentByClass<UTankAimingComponent>();
 	if (!ensure(AimingComponent)) { return; }
 	FoundAimingComponent(AimingComponent);
@@ -87,7 +88,7 @@ bool ATankPlayerController::GetLookVectorHitLocation(FVector LookDirection, FVec
 							HitResult,
 							StartLocation,
 							EndLocation,
-							ECollisionChannel::ECC_Visibility)
+							ECollisionChannel::ECC_Camera)
 		)
 	{
 		// Set hit location
